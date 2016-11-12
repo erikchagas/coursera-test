@@ -1,0 +1,20 @@
+---- BROWSER-SYNC ----
+Digitar o seguinte comando, dentro da pasta aonde os arquivos serão modificados:
+
+-> browser-sync start --server --directory --files "*"
+
+
+---- GIT ----
+-> git clone https://github.com/erikchagas/coursera-test.git
+
+-> git status
+-> git add . | -> git add caminho/para/arquivos
+-> git commit -m "Mensagem de modificação"
+-> git push
+
+-> git config --global user.email "erikchagas00@gmail.com"
+
+
+---- SITE GITHUB ----
+https://erikchagas.github.io/coursera-test/
+
