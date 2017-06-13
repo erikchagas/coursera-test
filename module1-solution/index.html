@@ -5,18 +5,20 @@
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
     <style>body { font-size: 1.3em; }</style>
-    <title>Name Calculator</title>
-  </head>
-  <body ng-app="NameCalculator">
-    <h1>Name Calculator</h1>
-    <div ng-controller="NameCaculatorController">
-      <div>
-        Your name:
-        <input type="text"
-          ng-model="name"
-          ng-keyup="displayNumeric();">
-      </div>
-      <div>Total Numeric value of person's name is: {{totalValue}}</div>
+    <title>Lunch Check</title>
+  </head> 
+  <body ng-app="LunchCheck">
+    <h1>Lunch Check</h1>
+    <div ng-controller="LunchCheckController">
+      What do you want to eat for lunch?
+      <br>
+      <input type="text"
+        ng-model="lunchList"
+        style="border: 1px solid {{color}}">
+      <br>
+      <button ng-click="checkLunch()">Check If Too Much</button>
+      <br>
+      <div style="color: {{color}}">{{lunchMsg}}</div>
     </div>
   </body>
 </html>
