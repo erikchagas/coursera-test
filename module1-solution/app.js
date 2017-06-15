@@ -14,34 +14,28 @@
     $scope.checkLunch = function () {
       var totalItems = calculateList($scope.lunchList);
       if (totalItems === 0){
+        $scope.color = 'red';
         $scope.lunchMsg = 'Please enter data first';
-        setRed();
-      } else if (totalItems > 0 && totalItems <= 3){
-        $scope.lunchMsg = 'Enjoy!';
-        setGreen();     
       } else {
-        $scope.lunchMsg = 'Too much!';
-        setGreen();
+        $scope.color = 'green';
+        if (totalItems > 0 && totalItems <= 3){
+          $scope.lunchMsg = 'Enjoy!';    
+        } else {
+          $scope.lunchMsg = 'Too much!';
+        } 
       }
     };
 
     function calculateList(str) {
       var arr = str.split(',');
+      var retArr = [];
 
       for (var i = 0; i < arr.length; i++) {
-        if (arr[i].length === 0)
-          arr.splice(i, 1);
+        if (arr[i].trim().length > 0)
+          retArr.push(arr[i]);
       }
 
-      return arr.length;
+      return retArr.length;
     }
-
-    function setRed(){
-      $scope.color = 'red';    
-    }
-
-    function setGreen(){
-      $scope.color = 'green';     
-    }  
   }
 })();
